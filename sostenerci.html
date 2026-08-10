@@ -1022,6 +1022,137 @@
       line-height: 1.45;
     }
 
+    .sponsor-card__features .feature-mockup {
+      margin: 2px 12px 12px 37px;
+      overflow: hidden;
+      border: 1px solid rgba(75, 88, 66, .18);
+      border-radius: 6px;
+      background: #f7f7f5;
+    }
+
+    .sponsor-card__features .feature-mockup img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+
+    .sponsor-card__features .feature-note {
+      margin: 0 12px 13px 37px;
+      padding: 10px 12px;
+      border-left: 3px solid var(--accent);
+      border-radius: 0 5px 5px 0;
+      color: #4f4942;
+      background: rgba(255, 255, 255, .66);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .sponsor-card__features .mockup-trigger {
+      margin: 0 12px 13px 37px;
+      min-height: 38px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: 1px solid rgba(var(--accent-rgb), .46);
+      border-radius: 6px;
+      padding: 9px 12px;
+      color: #35402f;
+      background: rgba(255, 255, 255, .78);
+      cursor: pointer;
+      font: inherit;
+      font-size: 12px;
+      font-weight: 850;
+      line-height: 1.25;
+      text-align: left;
+      transition: background .2s ease, border-color .2s ease, transform .2s ease;
+    }
+
+    .sponsor-card__features .mockup-trigger:hover {
+      border-color: var(--accent);
+      background: #fff;
+      transform: translateY(-1px);
+    }
+
+    .sponsor-card__features .mockup-trigger::after {
+      content: "\2197";
+      font-size: 14px;
+      line-height: 1;
+    }
+
+    .mockup-dialog {
+      width: min(1180px, calc(100vw - 32px));
+      max-width: none;
+      max-height: calc(100vh - 32px);
+      margin: auto;
+      border: 0;
+      padding: 0;
+      color: #261f1a;
+      background: transparent;
+    }
+
+    .mockup-dialog::backdrop {
+      background: rgba(20, 16, 13, .78);
+      backdrop-filter: blur(5px);
+    }
+
+    .mockup-dialog__panel {
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, .24);
+      border-radius: 8px;
+      background: #fbf8ef;
+      box-shadow: 0 30px 90px rgba(0, 0, 0, .34);
+    }
+
+    .mockup-dialog__header {
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 14px 18px;
+      border-bottom: 1px solid rgba(75, 88, 66, .18);
+    }
+
+    .mockup-dialog__header p {
+      margin: 0;
+      color: #261f1a;
+      font-size: clamp(17px, 2vw, 23px);
+      font-weight: 900;
+    }
+
+    .mockup-dialog__close {
+      width: 38px;
+      height: 38px;
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(75, 88, 66, .28);
+      border-radius: 50%;
+      color: #35402f;
+      background: #fff;
+      cursor: pointer;
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    .mockup-dialog__figure {
+      margin: 0;
+      padding: 14px;
+      background: #f2eee6;
+    }
+
+    .mockup-dialog__figure img {
+      display: block;
+      width: 100%;
+      max-height: calc(100vh - 128px);
+      object-fit: contain;
+      border-radius: 5px;
+      background: white;
+    }
+
     .sponsor-card__footer {
       margin-top: auto;
       display: flex;
@@ -2247,7 +2378,11 @@
           <div class="sponsor-card__features">
             <details>
               <summary>Logo sui vestiti ufficiali ATLS</summary>
-              <p>Uno spazio logo di 30 cm&sup2; per ciascuno dei tre partner su giacca d'allenamento, softshell e polo ufficiale ATLS. I capi vengono indossati da lottatori, funzionari e membri del comitato durante le attivit&agrave; e gli appuntamenti associativi. La superficie complessiva di 90 cm&sup2;, il posizionamento e la produzione finale devono rispettare il regolamento ESV vigente.</p>
+              <div class="feature-mockup">
+                <img src="output/mockup-partner-gara-capi-ufficiali.png" alt="Esempio indicativo della disposizione dei tre loghi partner sui capi ufficiali ATLS">
+              </div>
+              <p>Uno spazio logo indicativo di 30 cm&sup2; per ciascuno dei tre partner su giacca d'allenamento, softshell e polo ufficiale ATLS. I capi vengono indossati da lottatori, funzionari e membri del comitato durante le attivit&agrave; e gli appuntamenti associativi.</p>
+              <div class="feature-note"><strong>Mockup indicativo.</strong> Colori, modelli dei capi, numero dei capi prodotti e spazio effettivamente disponibile possono variare in funzione degli ordini, delle disponibilit&agrave; dei fornitori e delle regole vigenti dell'Associazione federale di lotta svizzera (ESV). Posizione, dimensioni e produzione finale vengono quindi confermate prima di ogni ordinazione.</div>
             </details>
             <details>
               <summary>Unico nella tua categoria professionale</summary>
@@ -2272,6 +2407,7 @@
             <details>
               <summary>Stories social da concordare</summary>
               <p>Stories dedicate o condivise durante allenamenti, gare, eventi e attivit&agrave; concordate con il partner.</p>
+              <button class="mockup-trigger" type="button" data-mockup-open="instagram-mockup">Vedi il mockup di come sar&agrave; idealmente il nostro Instagram</button>
             </details>
             <details>
               <summary>Coinvolgimento negli eventi</summary>
@@ -2327,6 +2463,7 @@
             <details>
               <summary>Stories social da concordare</summary>
               <p>Stories dedicate o condivise durante allenamenti, gare, eventi e attivit&agrave; concordate con il partner.</p>
+              <button class="mockup-trigger" type="button" data-mockup-open="instagram-mockup">Vedi il mockup di come sar&agrave; idealmente il nostro Instagram</button>
             </details>
             <details>
               <summary>Coinvolgimento negli eventi</summary>
@@ -2378,6 +2515,7 @@
             <details>
               <summary>Stories social da concordare</summary>
               <p>Stories dedicate o condivise durante allenamenti, gare, eventi e attivit&agrave; concordate con il partner.</p>
+              <button class="mockup-trigger" type="button" data-mockup-open="instagram-mockup">Vedi il mockup di come sar&agrave; idealmente il nostro Instagram</button>
             </details>
             <details>
               <summary>Coinvolgimento negli eventi</summary>
@@ -2512,6 +2650,18 @@
     </section>
   </main>
 
+  <dialog class="mockup-dialog" id="instagram-mockup" aria-labelledby="instagram-mockup-title">
+    <div class="mockup-dialog__panel">
+      <header class="mockup-dialog__header">
+        <p id="instagram-mockup-title">Mockup della futura presenza Instagram ATLS</p>
+        <button class="mockup-dialog__close" type="button" data-dialog-close aria-label="Chiudi il mockup" title="Chiudi">&times;</button>
+      </header>
+      <figure class="mockup-dialog__figure">
+        <img src="output/mockup-instagram-atls.png" alt="Mockup ideale del profilo, delle storie in evidenza e del feed Instagram ATLS">
+      </figure>
+    </div>
+  </dialog>
+
   <footer>
     <div class="wrap">
       <div>
@@ -2530,6 +2680,23 @@
     }, { threshold: 0.12 });
 
     document.querySelectorAll(".reveal").forEach((section) => visible.observe(section));
+
+    document.querySelectorAll("[data-mockup-open]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const dialog = document.getElementById(button.dataset.mockupOpen);
+        if (dialog && typeof dialog.showModal === "function") dialog.showModal();
+      });
+    });
+
+    document.querySelectorAll("[data-dialog-close]").forEach((button) => {
+      button.addEventListener("click", () => button.closest("dialog")?.close());
+    });
+
+    document.querySelectorAll("dialog").forEach((dialog) => {
+      dialog.addEventListener("click", (event) => {
+        if (event.target === dialog) dialog.close();
+      });
+    });
   </script>
 </body>
 </html>
